@@ -26,7 +26,6 @@ type SDC struct {
 
 type Message struct {
 	Header    *[]Header    `json:"Header"`
-	HeaderDoc *[]HeaderDoc `json:"HeaderDoc"`
 }
 
 type Header struct {
@@ -46,7 +45,7 @@ type Header struct {
 	ConfirmationEntryDate                    *string  `json:"ConfirmationEntryDate"`
 	ConfirmationEntryTime                    *string  `json:"ConfirmationEntryTime"`
 	ConfirmationText                         *string  `json:"ConfirmationText"`
-	IsFinalConfirmation                      *string  `json:"IsFinalConfirmation"`
+	IsFinalConfirmation                      *bool	  `json:"IsFinalConfirmation"`
 	WorkCenter                               int      `json:"WorkCenter"`
 	EmployeeIDWhoConfirmed                   int      `json:"EmployeeIDWhoConfirmed"`
 	ConfirmedExecutionStartDate              *string  `json:"ConfirmedExecutionStartDate"`
@@ -74,21 +73,5 @@ type Header struct {
 	CreationTime                             string   `json:"CreationTime"`
 	LastChangeDate                           string   `json:"LastChangeDate"`
 	LastChangeTime                           string   `json:"LastChangeTime"`
-	IsCancelled                              *int     `json:"IsCancelled"`
-}
-
-type HeaderDoc struct {
-	ProductionOrder          int     `json:"ProductionOrder"`
-	ProductionOrderItem      int     `json:"ProductionOrderItem"`
-	Operations               int     `json:"Operations"`
-	OperationsItem           int     `json:"OperationsItem"`
-	OperationID              int     `json:"OperationID"`
-	ConfirmationCountingID   int     `json:"ConfirmationCountingID"`
-	DocType                  string  `json:"DocType"`
-	DocVersionID             int     `json:"DocVersionID"`
-	DocID                    string  `json:"DocID"`
-	FileExtension            string  `json:"FileExtension"`
-	FileName                 *string `json:"FileName"`
-	FilePath                 *string `json:"FilePath"`
-	DocIssuerBusinessPartner *int    `json:"DocIssuerBusinessPartner"`
+	IsCancelled                              *bool    `json:"IsCancelled"`
 }
